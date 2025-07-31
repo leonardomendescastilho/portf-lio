@@ -5,6 +5,7 @@
 import { useMemo } from "react";
 import type { HeroModel } from "./HeroModel";
 import ProfileImage from '/src/assets/images/image-profile.png';
+import { useLanguage } from "../Language/language-provider";
 
 /**
  * @function useHeroViewModel
@@ -12,18 +13,20 @@ import ProfileImage from '/src/assets/images/image-profile.png';
  * @returns {HeroModel} Dados do Hero.
  */
 export const useHeroViewModel = (): HeroModel => {
+  const { t } = useLanguage();
+  
   return useMemo(() => ({
-    name: "Leonardo Mendes",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
-    techBadges: ["React", "TypeScript", "Node.js", "Javascript", "Python"],
+    name: t.hero.name,
+    description: t.hero.description,
+    techBadges: t.hero.techBadges,
     photoUrl: ProfileImage, 
-    cvUrl: "/cv-leonardo-castilho.pdf", // Substitua pelo caminho real
+    cvUrl: "/cv-leonardo-castilho.pdf",
     socialLinks: [
-      { label: "GitHub", url: "https://github.com/leonardomendescastilho", icon: "github" },
-      { label: "LinkedIn", url: "https://www.linkedin.com/in/leonardodevcastilho/", icon: "linkedin" },
-      { label: "Instagram", url: "https://www.instagram.com/castilho.io/", icon: "instagram" },
-      { label: "Email", url: "mailto:leonardo.mendescastilho@gmail.com", icon: "mail" },
-      { label: "WhatsApp", url: "https://wa.me/5512982242771", icon: "smartphone" },
+      { label: t.hero.socialLinks.github, url: "https://github.com/leonardomendescastilho", icon: "github" },
+      { label: t.hero.socialLinks.linkedin, url: "https://www.linkedin.com/in/leonardodevcastilho/", icon: "linkedin" },
+      { label: t.hero.socialLinks.instagram, url: "https://www.instagram.com/castilho.io/", icon: "instagram" },
+      { label: t.hero.socialLinks.email, url: "mailto:leonardo.mendescastilho@gmail.com", icon: "mail" },
+      { label: t.hero.socialLinks.whatsapp, url: "https://wa.me/5512982242771", icon: "smartphone" },
     ],
-  }), []);
+  }), [t]);
 };

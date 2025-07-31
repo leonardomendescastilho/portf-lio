@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram, Mail, Phone } from "lucide-react";
 import { useHeroViewModel } from "./HeroViewModel";
+import { useLanguage } from "@/components/Language/language-provider";
 
 /**
  * @function HeroView
@@ -15,6 +16,7 @@ import { useHeroViewModel } from "./HeroViewModel";
  */
 const HeroView = () => {
   const hero = useHeroViewModel();
+  const { t } = useLanguage();
 
   return (
     <section className="flex flex-col items-center gap-7 py-12 w-full max-w-xl mx-auto">
@@ -71,7 +73,7 @@ const HeroView = () => {
       >
         <Button asChild size="lg" className="mt-2">
           <a href={hero.cvUrl} download target="_blank" rel="noopener noreferrer">
-            Download CV
+            {t.hero.downloadCV}
           </a>
         </Button>
       </motion.div>
