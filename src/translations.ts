@@ -38,6 +38,9 @@ export interface Translations {
     projects: {
       title: string;
       description: string;
+      sampleProject1Description: string;
+      sampleProject2Description: string;
+      sampleProject3Description: string;
     };
     about: {
       title: string;
@@ -79,6 +82,9 @@ export const translations: Record<Language, Translations> = {
       projects: {
         title: "Meus Projetos",
         description: "Aqui estão alguns dos meus projetos mais relevantes.",
+        sampleProject1Description: "Website de portfólio moderno construído com React e TypeScript",
+        sampleProject2Description: "Solução completa de e-commerce com integração de pagamentos",
+        sampleProject3Description: "Aplicativo colaborativo de gerenciamento de tarefas com atualizações em tempo real",
       },
       about: {
         title: "Sobre Mim",
@@ -118,6 +124,9 @@ export const translations: Record<Language, Translations> = {
       projects: {
         title: "My Projects",
         description: "Here are some of my most relevant projects.",
+        sampleProject1Description: "Modern portfolio website built with React and TypeScript",
+        sampleProject2Description: "Full-stack e-commerce solution with payment integration",
+        sampleProject3Description: "Collaborative task management application with real-time updates",
       },
       about: {
         title: "About Me",
