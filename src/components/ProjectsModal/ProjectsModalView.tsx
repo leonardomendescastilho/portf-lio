@@ -33,7 +33,7 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-scroll scrollbar-none">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center font-serif-display">
             {t.modals.projects.title}
@@ -49,12 +49,17 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
               key={project.id}
               className="border rounded-lg p-6 space-y-4 hover:shadow-md transition-shadow"
             >
-              <div className="flex justify-between items-start">
-                <div className="space-y-2 flex-1">
+              <div className="flex flex-col justify-between items-start">
+                <div className="space-y-3 flex-1">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-48 object-cover rounded-lg mb-4 border-b"
+                  />
                   <h3 className="text-xl font-semibold">{project.title}</h3>
                   <p className="text-muted-foreground">{project.description}</p>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-2 mb-5">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="secondary" className="text-xs">
                         {tech}
@@ -63,8 +68,8 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 
-                <div className="flex gap-2 ml-4">
-                  <Button variant="outline" size="sm" asChild>
+                <div className="flex gap-2 mt-4">
+                  <Button className="w-full" variant="outline" size="sm" asChild>
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -76,7 +81,7 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
                   </Button>
                   
                   {project.liveUrl && (
-                    <Button variant="outline" size="sm" asChild>
+                    <Button className="w-full" variant="outline" size="sm" asChild>
                       <a
                         href={project.liveUrl}
                         target="_blank"

@@ -27,7 +27,7 @@ export const useProjectsModalViewModel = (
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       githubUrl: "https://github.com/leonardomendescastilho/portfolio",
       liveUrl: "https://leonardocastilho.dev",
-      imageUrl: "/projects/portfolio-preview.jpg"
+      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
     },
     {
       id: "2",
@@ -36,7 +36,7 @@ export const useProjectsModalViewModel = (
       technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
       githubUrl: "https://github.com/leonardomendescastilho/ecommerce",
       liveUrl: "https://shop.example.com",
-      imageUrl: "/projects/ecommerce-preview.jpg"
+      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
     },
     {
       id: "3",
@@ -44,7 +44,8 @@ export const useProjectsModalViewModel = (
       description: t.modals.projects.sampleProject3Description || "Collaborative task management application with real-time updates",
       technologies: ["React", "Firebase", "Material-UI", "Socket.io"],
       githubUrl: "https://github.com/leonardomendescastilho/taskmanager",
-      imageUrl: "/projects/taskmanager-preview.jpg"
+      liveUrl: "https://shop.example.com",
+      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
     }
   ], [t]);
 
