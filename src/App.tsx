@@ -1,11 +1,19 @@
-import { Button } from "@/components/ui/button"
+import HeaderView from "@/components/Header/HeaderView";
 
+/**
+ * @function App
+ * @description Componente raiz do portfólio, aplica o Header e centraliza o conteúdo.
+ * @returns {JSX.Element}
+ */
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
+    <div className="flex min-h-svh flex-col">
+      <HeaderView />
+      <main className="flex-1 flex flex-col items-center justify-center p-4">
+        {/* Conteúdo centralizado do portfólio */}
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
