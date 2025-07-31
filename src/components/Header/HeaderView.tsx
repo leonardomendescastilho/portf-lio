@@ -43,8 +43,8 @@ const HeaderView: FC = () => {
       </header>
       
       <ProjectsModal 
-        isOpen={isProjectsModalOpen} 
-        onClose={closeProjectsModal} 
+          isOpen={isProjectsModalOpen} 
+          onClose={closeProjectsModal} 
       />
     </>
   );

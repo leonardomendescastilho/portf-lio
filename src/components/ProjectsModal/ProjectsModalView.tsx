@@ -35,10 +35,10 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold font-serif-display">
+          <DialogTitle className="text-2xl font-bold text-center font-serif-display">
             {t.modals.projects.title}
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground">
+          <DialogDescription className="text-muted-foreground text-center">
             {t.modals.projects.description}
           </DialogDescription>
         </DialogHeader>
