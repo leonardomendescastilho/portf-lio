@@ -4,6 +4,12 @@
  */
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram, Mail, Phone } from "lucide-react";
 import { useHeroViewModel } from "./HeroViewModel";
@@ -19,7 +25,8 @@ const HeroView = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="flex flex-col items-center gap-7 py-12 w-full max-w-xl mx-auto">
+    <TooltipProvider>
+      <section className="flex flex-col items-center gap-7 py-12 w-full max-w-xl mx-auto">
       <motion.img
         src={hero.photoUrl}
         alt={hero.name}
@@ -55,14 +62,21 @@ const HeroView = () => {
       >
         {hero.techBadges.map((tech, idx) => (
           <motion.div
-        key={tech}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 + idx * 0.12, duration: 0.4 }}
+            key={tech}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 + idx * 0.12, duration: 0.4 }}
           >
-        <Badge variant="outline" className="text-sm px-3 py-1">
-          {tech}
-        </Badge>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge variant="outline" className="text-sm px-3 py-1 cursor-pointer">
+                  {tech}
+                </Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{t.hero.techBadgeDescriptions[tech]}</p>
+              </TooltipContent>
+            </Tooltip>
           </motion.div>
         ))}
       </motion.div>
@@ -84,7 +98,7 @@ const HeroView = () => {
         transition={{ delay: 1, duration: 0.5 }}
       >
         {hero.socialLinks.map((link) => {
-          const icons: Record<string, JSX.Element> = {
+          const icons: Record<string, React.ReactElement> = {
             github: <Github className="w-5 h-5 hover:text-primary transition-colors" strokeWidth={1.3} />,
             linkedin: <Linkedin className="w-5 h-5 hover:text-primary transition-colors" strokeWidth={1.3} />,
             instagram: <Instagram className="w-5 h-5 hover:text-primary transition-colors" strokeWidth={1.3} />,
@@ -106,6 +120,7 @@ const HeroView = () => {
         })}
       </motion.div>
     </section>
+    </TooltipProvider>
   );
 };
 

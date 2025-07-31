@@ -17,6 +17,7 @@ export interface Translations {
     name: string;
     description: string;
     techBadges: string[];
+    techBadgeDescriptions: Record<string, string>;
     downloadCV: string;
     socialLinks: {
       github: string;
@@ -55,6 +56,13 @@ export const translations: Record<Language, Translations> = {
       name: "Leonardo Mendes",
       description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       techBadges: ["React", "TypeScript", "Node.js", "Javascript", "Python"],
+      techBadgeDescriptions: {
+        "React": "Biblioteca para interfaces modernas",
+        "TypeScript": "JavaScript tipado para maior segurança",
+        "Node.js": "Execução de JS no backend",
+        "Javascript": "Linguagem base da web",
+        "Python": "Versátil e poderosa para scripts e IA"
+      },
       downloadCV: "Download CV",
       socialLinks: {
         github: "GitHub",
@@ -87,6 +95,13 @@ export const translations: Record<Language, Translations> = {
       name: "Leonardo Mendes",
       description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       techBadges: ["React", "TypeScript", "Node.js", "Javascript", "Python"],
+      techBadgeDescriptions: {
+        "React": "Library for modern UIs",
+        "TypeScript": "Typed JavaScript for safety",
+        "Node.js": "JavaScript runtime for backend",
+        "Javascript": "The language of the web",
+        "Python": "Versatile and powerful for scripts and AI"
+      },
       downloadCV: "Download CV",
       socialLinks: {
         github: "GitHub",
