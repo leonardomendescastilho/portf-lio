@@ -17,7 +17,7 @@ const HeroView = () => {
   const hero = useHeroViewModel();
 
   return (
-    <section className="flex flex-col items-center gap-6 py-12 w-full max-w-xl mx-auto">
+    <section className="flex flex-col items-center gap-7 py-12 w-full max-w-xl mx-auto">
       <motion.img
         src={hero.photoUrl}
         alt={hero.name}
@@ -27,7 +27,7 @@ const HeroView = () => {
         transition={{ duration: 0.7 }}
       />
       <motion.h1
-        className="text-3xl font-bold text-center "
+        className="text-3xl font-bold text-center tracking-tight font-serif-display"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -35,7 +35,7 @@ const HeroView = () => {
         {hero.name}
       </motion.h1>
       <motion.p
-        className="text-lg text-muted-foreground text-center"
+        className="text-lg text-muted-foreground text-center tracking-tighter mb-4 font-serif-display"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}

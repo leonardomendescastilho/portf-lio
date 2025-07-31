@@ -13,8 +13,8 @@ import ProfileImage from '/src/assets/images/image-profile.png';
  */
 export const useHeroViewModel = (): HeroModel => {
   return useMemo(() => ({
-    name: "Leonardo Mendes de Castilho",
-    description: "Desenvolvedor Full Stack | React, Node.js, TypeScript, Python",
+    name: "Leonardo Mendes",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis.",
     techBadges: ["React", "TypeScript", "Node.js", "Javascript", "Python"],
     photoUrl: ProfileImage, 
     cvUrl: "/cv-leonardo-castilho.pdf", // Substitua pelo caminho real
