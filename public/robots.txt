@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://leonardomendescastilho.github.io/portf-lio/sitemap.xml
+Sitemap: /sitemap.xml
 
 # Disallow admin areas (se houver no futuro)
 Disallow: /admin/

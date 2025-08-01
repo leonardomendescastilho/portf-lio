@@ -12,6 +12,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  // Configuração para GitHub Pages
-  base: process.env.NODE_ENV === 'production' ? '/portf-lio/' : '/',
+  // Configuração para deploy - Vercel usa base '/'
+  base: '/',
 })
