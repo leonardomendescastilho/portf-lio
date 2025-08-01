@@ -30,7 +30,7 @@ const AboutModalView: FC<AboutModalViewProps> = ({ isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-scroll scrollbar-none">
+      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-scroll scrollbar-none">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center font-serif-display">
             {t.modals.about.title}
@@ -40,7 +40,7 @@ const AboutModalView: FC<AboutModalViewProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="mt-6">
+        <div className="mt-6 p-4">
           <div className="prose prose-sm max-w-none text-foreground">
             <p className="text-base leading-relaxed text-justify">
               {aboutText}
