@@ -54,7 +54,7 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="w-full h-48 object-cover rounded-lg mb-4 border-b"
+                    className="w-full h-fit object-cover mb-4 border"
                   />
                   <h3 className="text-xl font-semibold">{project.title}</h3>
                   <p className="text-muted-foreground">{project.description}</p>
