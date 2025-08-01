@@ -1,8 +1,6 @@
-# 🚀 Portfólio Pessoal - Leonardo Mendes de Castilho
+# 🚀 Portifólio - Leonardo Mendes de Castilho
 
 Um portfólio moderno, responsivo e bilingue desenvolvido com as mais recentes tecnologias web, seguindo os princípios de Clean Code e arquitetura MVVM.
-
-![Build Status](https://github.com/leonardomendescastilho/portf-lio/workflows/Build%20and%20Deploy%20Portfolio/badge.svg)
 
 ## ✨ Características
 
@@ -126,7 +124,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 **Leonardo Mendes de Castilho**
 
 - GitHub: [@leonardomendescastilho](https://github.com/leonardomendescastilho)
-- LinkedIn: [Leonardo Mendes de Castilho](https://linkedin.com/in/leonardomendescastilho)
+- Linkedin: [Leonardo Mendes de Castilho](https://linkedin.com/in/leonardomendescastilho)
 - Email: leonardo.mendescastilho@gmail.com
 
 ---
