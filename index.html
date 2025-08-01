@@ -1,12 +1,95 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
+    <!-- Meta tags básicas -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leonardo Portifólio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Título e descrição -->
+    <title>Leonardo Mendes de Castilho | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfólio de Leonardo Mendes de Castilho - Desenvolvedor Full Stack especializado em React, TypeScript, Node.js e tecnologias modernas. Veja meus projetos e entre em contato." />
+    <meta name="keywords" content="desenvolvedor, full stack, react, typescript, javascript, nodejs, portfolio, programador, web developer" />
+    <meta name="author" content="Leonardo Mendes de Castilho" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://leonardomendescastilho.github.io/portf-lio/" />
+    <meta property="og:title" content="Leonardo Mendes de Castilho | Desenvolvedor Full Stack" />
+    <meta property="og:description" content="Portfólio de Leonardo Mendes de Castilho - Desenvolvedor Full Stack especializado em React, TypeScript, Node.js e tecnologias modernas." />
+    <meta property="og:image" content="https://leonardomendescastilho.github.io/portf-lio/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Leonardo Mendes de Castilho" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://leonardomendescastilho.github.io/portf-lio/" />
+    <meta name="twitter:title" content="Leonardo Mendes de Castilho | Desenvolvedor Full Stack" />
+    <meta name="twitter:description" content="Portfólio de Leonardo Mendes de Castilho - Desenvolvedor Full Stack especializado em React, TypeScript, Node.js e tecnologias modernas." />
+    <meta name="twitter:image" content="https://leonardomendescastilho.github.io/portf-lio/og-image.jpg" />
+    <meta name="twitter:creator" content="@leonardomendescastilho" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload crítico -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://leonardomendescastilho.github.io/portf-lio/" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Leonardo Mendes de Castilho",
+      "jobTitle": "Desenvolvedor Full Stack",
+      "url": "https://leonardomendescastilho.github.io/portf-lio/",
+      "sameAs": [
+        "https://github.com/leonardomendescastilho",
+        "https://linkedin.com/in/leonardomendescastilho"
+      ],
+      "knowsAbout": ["React", "TypeScript", "JavaScript", "Node.js", "Web Development"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer"
+      }
+    }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Fallback para usuários sem JavaScript -->
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif;">
+        <h1>Leonardo Mendes de Castilho</h1>
+        <p>Este portfólio requer JavaScript para funcionar corretamente.</p>
+        <p>Por favor, ative o JavaScript em seu navegador.</p>
+      </div>
+    </noscript>
+    
+    <!-- Container principal da aplicação -->
+    <div id="root" aria-label="Aplicação do portfólio"></div>
+    
+    <!-- Script principal -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

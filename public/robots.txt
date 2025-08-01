@@ -1,0 +1,10 @@
+# robots.txt para SEO
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://leonardomendescastilho.github.io/portf-lio/sitemap.xml
+
+# Disallow admin areas (se houver no futuro)
+Disallow: /admin/
+Disallow: /.git/
