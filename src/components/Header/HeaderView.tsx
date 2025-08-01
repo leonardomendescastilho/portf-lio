@@ -9,6 +9,7 @@ import { LanguageToggle } from "@/components/Language/language-toggle";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/components/Language/language-provider";
 import { ProjectsModal } from "@/components/ProjectsModal";
+import { AboutModal } from "@/components/AboutModal";
 
 /**
  * @function HeaderView
@@ -16,7 +17,7 @@ import { ProjectsModal } from "@/components/ProjectsModal";
  * @returns {JSX.Element} O header do site.
  */
 const HeaderView: FC = () => {
-  const { links, onNavigate, isProjectsModalOpen, closeProjectsModal } = useHeaderViewModel();
+  const { links, onNavigate, isProjectsModalOpen, closeProjectsModal, isAboutMeModalOpen, closeAboutMeModal } = useHeaderViewModel();
   const { t } = useLanguage();
 
   return (
@@ -45,6 +46,11 @@ const HeaderView: FC = () => {
       <ProjectsModal 
           isOpen={isProjectsModalOpen} 
           onClose={closeProjectsModal} 
+      />
+
+      <AboutModal
+          isOpen={isAboutMeModalOpen}
+          onClose={closeAboutMeModal}
       />
     </>
   );

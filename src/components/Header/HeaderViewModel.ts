@@ -12,10 +12,12 @@ import type { HeaderViewModel } from "./HeaderModel";
  */
 export const useHeaderViewModel = (): HeaderViewModel => {
   const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
+  const [isAboutMeModalOpen, setIsAboutMeModalOpen] = useState(false);
+
 
   const links = [
-    { label: "Projetos", href: "#projetos", type: "modal" as const },
-    { label: "Sobre Mim", href: "#sobre", type: "scroll" as const },
+    { label: "Projetos", href: "#projetos", type: "modal-project" as const },
+    { label: "Sobre Mim", href: "#sobre", type: "modal-about" as const },
   ];
 
   const openProjectsModal = useCallback(() => {
@@ -26,14 +28,22 @@ export const useHeaderViewModel = (): HeaderViewModel => {
     setIsProjectsModalOpen(false);
   }, []);
 
-  const onNavigate = useCallback((href: string, type: 'modal' | 'scroll') => {
-    if (type === 'modal' && href === '#projetos') {
+  const openAboutMeModal = useCallback(() => {
+    setIsAboutMeModalOpen(true);
+  }, []);
+
+  const closeAboutMeModal = useCallback(() => {
+    setIsAboutMeModalOpen(false);
+  }, []);
+
+  const onNavigate = useCallback((href: string, type: 'modal-project' | 'modal-about') => {
+    if (type === 'modal-project' && href === '#projetos') {
       openProjectsModal();
-    } else if (type === 'scroll') {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
-  }, [openProjectsModal]);
+    else if (type === 'modal-about' && href === '#sobre') {
+      openAboutMeModal();
+    }
+  }, [openProjectsModal, openAboutMeModal]);
 
   return {
     links,
@@ -41,5 +51,8 @@ export const useHeaderViewModel = (): HeaderViewModel => {
     isProjectsModalOpen,
     openProjectsModal,
     closeProjectsModal,
+    isAboutMeModalOpen,
+    openAboutMeModal,
+    closeAboutMeModal,
   };
 };
