@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/components/Language/language-provider";
 import { ProjectsModal } from "@/components/ProjectsModal";
 import { AboutModal } from "@/components/AboutModal";
+import { motion } from "framer-motion";
 
 /**
  * @function HeaderView
@@ -22,7 +23,11 @@ const HeaderView: FC = () => {
 
   return (
     <>
-      <header className="w-full flex items-center justify-between py-4 px-6 border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
+      <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full flex items-center justify-between py-4 px-6 border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
         <div className="flex-1 flex justify-center">
           <nav className="flex gap-6 ml-20">
             {links.map((link) => (
@@ -41,7 +46,7 @@ const HeaderView: FC = () => {
           <ModeToggle />
           <LanguageToggle />
         </div>
-      </header>
+      </motion.header>
       
       <ProjectsModal 
           isOpen={isProjectsModalOpen} 
