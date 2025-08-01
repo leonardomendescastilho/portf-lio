@@ -13,12 +13,6 @@
       "sizes": "32x32",
       "type": "image/svg+xml",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/vite.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
     }
   ],
   "categories": ["business", "productivity"],
