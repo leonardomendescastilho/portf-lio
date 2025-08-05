@@ -37,8 +37,6 @@ export function LanguageProvider({
   );
 
   useEffect(() => {
-    // Aqui podemos adicionar lógica adicional se necessário
-    // Por exemplo, definir lang no HTML
     document.documentElement.lang = language;
   }, [language]);
 
