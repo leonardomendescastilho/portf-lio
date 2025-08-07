@@ -44,7 +44,7 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="grid gap-6 mt-6">
+        <div className="grid gap-6 mt-4">
           {projects.map((project) => (
             <div
               key={project.id}
