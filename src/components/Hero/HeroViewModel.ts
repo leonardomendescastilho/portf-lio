@@ -13,14 +13,14 @@ import { useLanguage } from "../Language/language-provider";
  * @returns {HeroModel} Dados do Hero.
  */
 export const useHeroViewModel = (): HeroModel => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return useMemo(() => ({
     name: t.hero.name,
     description: t.hero.description,
     techBadges: t.hero.techBadges,
     photoUrl: ProfileImage, 
-    cvUrl: "/cv-leonardo-castilho.pdf",
+    cvUrl: language === "pt-BR" ? "/cv_leo-PT.pdf" : "/cv_leo-EN.pdf",
     socialLinks: [
       { label: t.hero.socialLinks.github, url: "https://github.com/leonardomendescastilho", icon: "github" },
       { label: t.hero.socialLinks.linkedin, url: "https://www.linkedin.com/in/leonardodevcastilho/", icon: "linkedin" },
@@ -28,5 +28,5 @@ export const useHeroViewModel = (): HeroModel => {
       { label: t.hero.socialLinks.email, url: "mailto:leonardo.mendescastilho@gmail.com", icon: "mail" },
       { label: t.hero.socialLinks.whatsapp, url: "https://wa.me/5512982242771", icon: "smartphone" },
     ],
-  }), [t]);
+  }), [t, language]);
 };

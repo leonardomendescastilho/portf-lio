@@ -92,7 +92,7 @@ const HeroView = () => {
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           <Button asChild size="lg" className="mt-2">
-            <a href={hero.cvUrl} download target="_blank" rel="noopener noreferrer">
+            <a href={hero.cvUrl} download rel="noopener noreferrer">
               {t.hero.downloadCV}
             </a>
           </Button>
