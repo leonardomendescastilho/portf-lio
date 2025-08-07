@@ -100,15 +100,15 @@ export const translations: Record<Language, Translations> = {
                         liveUrl: "https://leonardomendescastilho.github.io/MovieFinder/",
                         imageUrl: MoiveFinder
                     },
-                    {
-                        id: "2",
-                        title: "Portfolio Website",
-                        description: "Modern portfolio website built with React and TypeScript",
-                        technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-                        githubUrl: "https://github.com/leonardomendescastilho/portfolio",
-                        liveUrl: "https://leonardocastilho.dev",
-                        imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
-                    },
+                    // {
+                    //     id: "2",
+                    //     title: "Portfolio Website",
+                    //     description: "Modern portfolio website built with React and TypeScript",
+                    //     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+                    //     githubUrl: "https://github.com/leonardomendescastilho/portfolio",
+                    //     liveUrl: "https://leonardocastilho.dev",
+                    //     imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
+                    // },
                   
                 ]
             },
@@ -162,15 +162,15 @@ export const translations: Record<Language, Translations> = {
                         liveUrl: "https://leonardomendescastilho.github.io/MovieFinder/",
                         imageUrl: MoiveFinder
                     },
-                    {
-                        id: "2",
-                        title: "Portfolio Website",
-                        description: "Modern portfolio website built with React and TypeScript",
-                        technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-                        githubUrl: "https://github.com/leonardomendescastilho/portfolio",
-                        liveUrl: "https://leonardocastilho.dev",
-                        imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
-                    },
+                    // {
+                    //     id: "2",
+                    //     title: "Portfolio Website",
+                    //     description: "Modern portfolio website built with React and TypeScript",
+                    //     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+                    //     githubUrl: "https://github.com/leonardomendescastilho/portfolio",
+                    //     liveUrl: "https://leonardocastilho.dev",
+                    //     imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
+                    // },
                 ]
             },
             about: {
