@@ -14,4 +14,7 @@ export default defineConfig({
   },
   // Configuração para deploy - Vercel usa base '/'
   base: '/',
+  // Garantir que PDFs sejam copiados corretamente
+  publicDir: 'public',
+  assetsInclude: ['**/*.pdf'],
 })
