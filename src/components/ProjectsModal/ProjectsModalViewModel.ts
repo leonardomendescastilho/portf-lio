@@ -19,35 +19,10 @@ export const useProjectsModalViewModel = (
 ): ProjectsModalModel => {
   const { t } = useLanguage();
 
-  const projects: Project[] = useMemo(() => [
-    {
-      id: "1",
-      title: "Portfolio Website",
-      description: t.modals.projects.sampleProject1Description || "Modern portfolio website built with React and TypeScript",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      githubUrl: "https://github.com/leonardomendescastilho/portfolio",
-      liveUrl: "https://leonardocastilho.dev",
-      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
-    },
-    {
-      id: "2",
-      title: "E-commerce Platform",
-      description: t.modals.projects.sampleProject2Description || "Full-stack e-commerce solution with payment integration",
-      technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-      githubUrl: "https://github.com/leonardomendescastilho/ecommerce",
-      liveUrl: "https://shop.example.com",
-      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
-    },
-    {
-      id: "3",
-      title: "Task Management App",
-      description: t.modals.projects.sampleProject3Description || "Collaborative task management application with real-time updates",
-      technologies: ["React", "Firebase", "Material-UI", "Socket.io"],
-      githubUrl: "https://github.com/leonardomendescastilho/taskmanager",
-      liveUrl: "https://shop.example.com",
-      imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.uF4xhcEH4QKRB9cX8sMSeAHaFA%3Fpid%3DApi&f=1&ipt=c3cc9fc59ad28bfd12aa5569d69701a26f74435cda19ec112803464c0fba1c7f"
-    }
-  ], [t]);
+  const projects: Project[] = useMemo(() => {
+    // Assuming t.modals.projects.project is an array of Project
+    return t.modals.projects.project ?? [];
+  }, [t]);
 
   return {
     projects,

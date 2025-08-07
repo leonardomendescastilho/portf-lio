@@ -31,6 +31,7 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
   const { projects } = useProjectsModalViewModel(isOpen, onClose);
   const { t } = useLanguage();
 
+  console.log("Projects:", projects);
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-scroll scrollbar-none">

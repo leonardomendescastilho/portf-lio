@@ -40,11 +40,13 @@ const AboutModalView: FC<AboutModalViewProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="mt-6 p-4">
+        <div className="p-4">
           <div className="prose prose-sm max-w-none text-foreground">
-            <p className="text-base leading-relaxed text-justify">
-              {aboutText}
-            </p>
+            {aboutText.map((paragraph, index) => (
+              <p key={index} className="text-base leading-relaxed text-justify mb-4">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </DialogContent>

@@ -8,7 +8,7 @@
  * @description Interface para os dados do Modal "Sobre Mim".
  */
 export interface AboutModalModel {
-  aboutText: string;
+  aboutText: string[];
   isOpen: boolean;
   onClose: () => void;
 }
