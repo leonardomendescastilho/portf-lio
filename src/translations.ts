@@ -4,7 +4,7 @@
  */
 
 export type Language = "pt-BR" | "en-US";
-import ProjectPlaceholder from "@/assets/images/project-placeholder.svg";
+import FestivalNadaYoga from "@/assets/images/festival-nada-yoga.jpg";
 export interface Translations {
   // Header
   header: {
@@ -96,49 +96,13 @@ export const translations: Record<Language, Translations> = {
                 description: "Aqui estão alguns dos meus projetos mais relevantes.",
                 project: [
                     {
-                        id: "1",
-                        title: "Nome do Projeto",
-                        description: "Descrição longa de teste para avaliar como o layout reage com bastante texto. Este projeto resolve um problema real de ponta a ponta: levantamento de requisitos, modelagem de dados, construção da interface, integração com múltiplas APIs, testes automatizados e deploy contínuo. A ideia é verificar quebra de linha, espaçamento, altura do card e a legibilidade quando o parágrafo ocupa várias linhas dentro do modal, tanto no mobile quanto no desktop. Também serve para checar se os botões e os chips continuam alinhados abaixo de um texto extenso. (placeholder)",
-                        technologies: ["React", "TypeScript", "Node.js", "Tailwind CSS"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "2",
-                        title: "Assistente RAG",
-                        description: "Chatbot com recuperação aumentada sobre uma base de conhecimento própria. (placeholder)",
-                        technologies: ["React", "TypeScript", "Node.js", "Python", "FastAPI", "LangChain", "RAG", "Claude", "Anthropic SDK", "PostgreSQL", "Redis", "Docker", "Kubernetes", "Tailwind CSS", "Vite", "Zod"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "3",
-                        title: "Dashboard de Dados",
-                        description: "Descrição longa de teste combinada com muitos chips de tecnologia para estressar o card ao máximo. Este painel interativo agrega dados de várias fontes, aplica transformações em tempo real, renderiza gráficos e tabelas, e permite exportar relatórios. O objetivo é ver como o card se comporta quando descrição extensa e uma lista grande de tecnologias aparecem juntas: se os chips quebram em várias linhas de forma limpa, se o espaçamento entre descrição, chips e botões continua consistente, e se a rolagem do modal segue confortável. (placeholder)",
-                        technologies: ["React", "TypeScript", "Next.js", "Node.js", "Python", "Streamlit", "PostgreSQL", "Redis", "GraphQL", "REST", "Docker", "Kubernetes", "AWS", "Terraform", "Tailwind CSS", "D3.js", "Recharts", "Vite"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "4",
-                        title: "Pipeline de ML",
-                        description: "Pipeline de treino, avaliação e deploy de modelos de machine learning. (placeholder)",
-                        technologies: ["Python", "scikit-learn", "Docker", "MLflow"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "5",
-                        title: "Agente Autônomo",
-                        description: "Sistema agêntico que executa tarefas multi-etapa usando ferramentas. (placeholder)",
-                        technologies: ["TypeScript", "Node.js", "Claude", "Anthropic SDK"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
+                        id: "festival-nada-yoga",
+                        title: "Festival de Nāda Yoga",
+                        description: "Landing page da 1ª edição do Festival de Nāda Yoga (Escola IntuiSom). Site de página única, mobile-first, com scroll suave, animações de entrada e conteúdo totalmente tipado e editável a cada edição. Projeto real, em produção.",
+                        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Motion", "Lenis", "Vercel"],
+                        githubUrl: "",
+                        liveUrl: "https://www.festivalnadayoga.com.br/",
+                        imageUrl: FestivalNadaYoga,
                     },
                 ]
             },
@@ -190,49 +154,13 @@ export const translations: Record<Language, Translations> = {
                 description: "Here are some of my most relevant projects.",
                 project: [
                     {
-                        id: "1",
-                        title: "Project Name",
-                        description: "Short project description — what it does and the problem it solves. (placeholder)",
-                        technologies: ["React", "TypeScript", "Node.js", "Tailwind CSS"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "2",
-                        title: "RAG Assistant",
-                        description: "Chatbot with retrieval-augmented generation over a custom knowledge base. (placeholder)",
-                        technologies: ["Python", "LangChain", "RAG", "FastAPI"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "3",
-                        title: "Data Dashboard",
-                        description: "Interactive panel to explore and visualize business metrics. (placeholder)",
-                        technologies: ["React", "TypeScript", "Streamlit", "PostgreSQL"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "4",
-                        title: "ML Pipeline",
-                        description: "Training, evaluation, and deployment pipeline for machine learning models. (placeholder)",
-                        technologies: ["Python", "scikit-learn", "Docker", "MLflow"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
-                    },
-                    {
-                        id: "5",
-                        title: "Autonomous Agent",
-                        description: "Agentic system that runs multi-step tasks using tools. (placeholder)",
-                        technologies: ["TypeScript", "Node.js", "Claude", "Anthropic SDK"],
-                        githubUrl: "#",
-                        liveUrl: "#",
-                        imageUrl: ProjectPlaceholder,
+                        id: "festival-nada-yoga",
+                        title: "Festival de Nāda Yoga",
+                        description: "Landing page for the 1st edition of the Nāda Yoga Festival (IntuiSom School). Mobile-first single-page site with smooth scrolling, entrance animations, and fully typed, per-edition editable content. Real project, in production.",
+                        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Motion", "Lenis", "Vercel"],
+                        githubUrl: "",
+                        liveUrl: "https://www.festivalnadayoga.com.br/",
+                        imageUrl: FestivalNadaYoga,
                     },
                 ]
             },

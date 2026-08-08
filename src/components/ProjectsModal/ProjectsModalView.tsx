@@ -65,7 +65,8 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
                 className="aspect-video w-full rounded-md border-2 border-transparent object-cover transition-colors group-hover:border-primary"
               />
               <h3 className="text-lg font-semibold break-words">{project.title}</h3>
-              <p className="text-sm sm:text-base leading-relaxed text-muted-foreground break-words">
+              {/* Altura fixa ~5 linhas: descrição maior ganha scroll interno, mantendo cards uniformes. */}
+              <p className="h-[8.2em] overflow-y-auto pr-1 text-sm sm:text-base leading-relaxed text-muted-foreground break-words">
                 {project.description}
               </p>
 
@@ -78,16 +79,18 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
               </div>
 
               <div className="mt-auto flex gap-2 pt-2">
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Ver código do ${project.title} no GitHub`}
-                  >
-                    <Github className="h-4 w-4" />
-                  </a>
-                </Button>
+                {project.githubUrl && (
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Ver código do ${project.title} no GitHub`}
+                    >
+                      <Github className="h-4 w-4" />
+                    </a>
+                  </Button>
+                )}
 
                 {project.liveUrl && (
                   <Button variant="outline" size="sm" asChild>
