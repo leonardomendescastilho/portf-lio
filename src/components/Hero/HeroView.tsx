@@ -38,18 +38,21 @@ const HeroView = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
-          {/* Wrapper estático recorta a foto. O border-radius NÃO pode ficar no <img> que
-              tem transform+object-cover — no iOS quebra o recorte e a foto vira quadrada. */}
-          <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-primary shadow-lg">
-            <motion.img
+          {/* iOS Safari não recorta filho com transform dentro de overflow:hidden+rounded.
+              Por isso a foto NÃO tem transform: o fade fica no wrapper (opacity), o <img>
+              é estático, e translateZ(0) força uma camada estável que recorta certo. */}
+          <motion.div
+            className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-primary shadow-lg [transform:translateZ(0)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
               src={hero.photoUrl}
               alt={hero.name}
               className="h-full w-full object-cover"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
             />
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-col items-center gap-1.5">
           <motion.h1
