@@ -1,6 +1,6 @@
 /**
  * @file language-toggle.tsx
- * @description Toggle de idioma com bandeiras BR/US
+ * @description Toggle de idioma com bandeiras BR/US — clique alterna o idioma.
  */
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "./language-provider";
@@ -20,12 +20,11 @@ export function LanguageToggle() {
       variant="ghost"
       aria-label={language === "pt-BR" ? "Switch to English" : "Mudar para Português"}
       onClick={toggleLanguage}
-      className="relative"
     >
       {language === "pt-BR" ? (
-        <img src={UsFlag} alt="English" className="h-5 w-5" />
+        <img src={UsFlag} alt="English" className="h-5 w-5 rounded-[2px]" />
       ) : (
-        <img src={BrFlag} alt="Português" className="h-5 w-5" />
+        <img src={BrFlag} alt="Português" className="h-5 w-5 rounded-[2px]" />
       )}
     </Button>
   );

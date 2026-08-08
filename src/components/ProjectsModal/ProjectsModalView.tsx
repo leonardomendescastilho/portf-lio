@@ -12,9 +12,10 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowLeft } from "lucide-react";
 import { useProjectsModalViewModel } from "./ProjectsModalViewModel";
 import { useLanguage } from "../Language/language-provider";
+import { useSwipeToDismiss } from "@/hooks/useSwipeToDismiss";
 
 interface ProjectsModalViewProps {
   isOpen: boolean;
@@ -30,13 +31,21 @@ interface ProjectsModalViewProps {
 const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
   const { projects } = useProjectsModalViewModel(isOpen, onClose);
   const { t } = useLanguage();
+  const { handlers, style } = useSwipeToDismiss(onClose);
 
-  console.log("Projects:", projects);
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-scroll scrollbar-none">
+      <DialogContent className="sm:max-w-4xl scrollbar-none" style={style} {...handlers}>
+        <button
+          type="button"
+          onClick={onClose}
+          className="sm:hidden sticky top-0 z-20 -mx-6 flex items-center gap-2 bg-background/95 px-6 py-2 text-base font-medium leading-none text-primary backdrop-blur"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          {t.modals.back}
+        </button>
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center font-serif-display">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-center font-serif-display">
             {t.modals.projects.title}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground text-center">
@@ -44,56 +53,54 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="grid gap-6 mt-4">
+        <div className="grid min-w-0 gap-4 sm:gap-6 sm:grid-cols-2 mt-4 pb-6">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="border rounded-lg p-6 space-y-4 hover:shadow-md transition-shadow"
+              className="group flex min-w-0 flex-col gap-3 rounded-lg border p-4 sm:p-5 transition-shadow hover:shadow-md"
             >
-              <div className="flex flex-col justify-between items-start">
-                <div className="space-y-3 flex-1">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-fit object-cover mb-4 border"
-                  />
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-muted-foreground">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mt-2 mb-5">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="flex gap-2 mt-4">
-                  <Button className="w-full" variant="outline" size="sm" asChild>
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="aspect-video w-full rounded-md border-2 border-transparent object-cover transition-colors group-hover:border-primary"
+              />
+              <h3 className="text-lg font-semibold break-words">{project.title}</h3>
+              <p className="text-sm sm:text-base leading-relaxed text-muted-foreground break-words">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <Badge key={tech} variant="secondary" className="text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="mt-auto flex gap-2 pt-2">
+                <Button variant="outline" size="sm" asChild>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ver código do ${project.title} no GitHub`}
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
+                </Button>
+
+                {project.liveUrl && (
+                  <Button variant="outline" size="sm" asChild>
                     <a
-                      href={project.githubUrl}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Ver código do ${project.title} no GitHub`}
+                      aria-label={`Ver ${project.title} ao vivo`}
                     >
-                      <Github className="w-4 h-4" />
+                      <ExternalLink className="h-4 w-4" />
                     </a>
                   </Button>
-                  
-                  {project.liveUrl && (
-                    <Button className="w-full" variant="outline" size="sm" asChild>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Ver ${project.title} ao vivo`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  )}
-                </div>
+                )}
               </div>
             </div>
           ))}

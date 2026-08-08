@@ -26,18 +26,18 @@ const HeroView = () => {
 
   return (
     <TooltipProvider>
-      <section className="flex flex-col flex-1 gap-6 items-center justify-around pt-12 w-full max-w-xl mx-auto min-h-0">
+      <section className="flex flex-col flex-1 items-center justify-center py-8 w-full max-w-xl mx-auto min-h-0">
       <div className="flex flex-col items-center gap-4">
         <motion.img
           src={hero.photoUrl}
           alt={hero.name}
-          className="w-48 h-48 rounded-full object-cover border-2 border-primary shadow-lg"
+          className="h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 rounded-full object-cover border-2 border-primary shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
         />
         <motion.h1
-        className="text-3xl font-bold text-center tracking-tight font-serif-display"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center tracking-tight font-serif-display"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -45,7 +45,7 @@ const HeroView = () => {
         {hero.name}
         </motion.h1>
         <motion.p
-          className="text-lg text-muted-foreground text-center tracking-tighter mb-4 font-serif-display"
+          className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground text-center leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -71,7 +71,7 @@ const HeroView = () => {
           >
             <Tooltip>
               <TooltipTrigger asChild>
-                <Badge variant="outline" className="text-sm px-3 py-1 cursor-pointer">
+                <Badge variant="outline" className="text-xs sm:text-sm px-2.5 py-0.5 cursor-pointer">
                   {tech}
                 </Badge>
               </TooltipTrigger>
@@ -85,20 +85,20 @@ const HeroView = () => {
 
       </div>
 
-      <div className="flex flex-col items-center justify-end">
-        <motion.div
+      <motion.div
+          className="mt-10 sm:mt-16 w-full sm:w-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <Button asChild size="lg" className="mt-2">
+          <Button asChild size="lg" className="w-full sm:w-auto">
             <a href={hero.cvUrl} download rel="noopener noreferrer">
               {t.hero.downloadCV}
             </a>
           </Button>
         </motion.div>
         <motion.div
-          className="flex gap-3 mt-15"
+          className="flex gap-4 mt-10 sm:mt-24"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
@@ -125,7 +125,6 @@ const HeroView = () => {
             );
           })}
         </motion.div>
-      </div>
     </section>
     </TooltipProvider>
   );

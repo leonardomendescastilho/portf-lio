@@ -1,3 +1,7 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+/* Fontes carregadas via <link> no index.html (DM Serif Display + Inter) */
+
 /* Utilitário para esconder scrollbar de forma cross-browser */
 .scrollbar-none {
   scrollbar-width: none; /* Firefox */
@@ -7,9 +11,6 @@
 .scrollbar-none::-webkit-scrollbar {
   display: none; /* Chrome/Safari/Webkit */
 }
-@import "tailwindcss";
-@import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital,wght@0,400;1,400&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -124,11 +125,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* Serif genérico do sistema — exatamente como estava (a web-font nunca era aplicada). */
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Serif Display', serif;
+    font-family: serif;
   }
   .font-serif-display {
-    font-family: 'DM Serif Display', serif;
+    font-family: serif;
   }
 }

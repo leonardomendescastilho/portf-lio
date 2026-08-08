@@ -4,7 +4,7 @@
  */
 import { useMemo } from "react";
 import type { HeroModel } from "./HeroModel";
-import ProfileImage from '/src/assets/images/image-profile.png';
+import ProfileImage from '/src/assets/images/leonardo-profile.jpg';
 import { useLanguage } from "../Language/language-provider";
 
 /**

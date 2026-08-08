@@ -27,22 +27,26 @@ const HeaderView: FC = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="w-full flex items-center justify-between py-4 px-6 border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="flex-1 flex justify-center">
-          <nav className="flex gap-6 ml-20">
-            {links.map((link) => (
-              <Button
-                key={link.href}
-                variant="ghost"
-                className="font-medium text-base"
-                onClick={() => onNavigate(link.href, link.type)}
-              >
-                {link.href === "#projetos" ? t.header.projects : t.header.about}
-              </Button>
-            ))}
-          </nav>
-        </div>
-        <div className="flex items-center gap-2">
+      className="w-full flex sm:grid sm:grid-cols-3 items-center justify-between gap-2 py-3 px-4 sm:px-6 border-b bg-background/80 backdrop-blur-md sticky top-0 z-50">
+        {/* Spacer (só desktop) para o nav centralizar de verdade */}
+        <div className="hidden sm:block" aria-hidden />
+
+        {/* Navegação (visível em todas as telas — só 2 seções). Centralizada no sm+ */}
+        <nav className="flex justify-start sm:justify-center gap-1 sm:gap-4">
+          {links.map((link) => (
+            <Button
+              key={link.href}
+              variant="ghost"
+              className="font-medium text-sm sm:text-base px-2 sm:px-3"
+              onClick={() => onNavigate(link.href, link.type)}
+            >
+              {link.href === "#projetos" ? t.header.projects : t.header.about}
+            </Button>
+          ))}
+        </nav>
+
+        {/* Controles à direita */}
+        <div className="flex items-center justify-end gap-1 sm:gap-2">
           <ModeToggle />
           <LanguageToggle />
         </div>

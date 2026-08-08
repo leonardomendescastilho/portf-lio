@@ -10,8 +10,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { ArrowLeft } from "lucide-react";
 import { useAboutModalViewModel } from "./AboutModalViewModel";
 import { useLanguage } from "../Language/language-provider";
+import { useSwipeToDismiss } from "@/hooks/useSwipeToDismiss";
 
 interface AboutModalViewProps {
   isOpen: boolean;
@@ -27,10 +29,19 @@ interface AboutModalViewProps {
 const AboutModalView: FC<AboutModalViewProps> = ({ isOpen, onClose }) => {
   const { aboutText } = useAboutModalViewModel(isOpen, onClose);
   const { t } = useLanguage();
+  const { handlers, style } = useSwipeToDismiss(onClose);
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-scroll scrollbar-none">
+      <DialogContent className="sm:max-w-4xl scrollbar-none" style={style} {...handlers}>
+        <button
+          type="button"
+          onClick={onClose}
+          className="sm:hidden sticky top-0 z-20 -mx-6 flex items-center gap-2 bg-background/95 px-6 py-2 text-base font-medium leading-none text-primary backdrop-blur"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          {t.modals.back}
+        </button>
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center font-serif-display">
             {t.modals.about.title}
@@ -40,7 +51,7 @@ const AboutModalView: FC<AboutModalViewProps> = ({ isOpen, onClose }) => {
           </DialogDescription>
         </DialogHeader>
         
-        <div className="p-4">
+        <div className="px-4 pt-4 pb-8">
           <div className="prose prose-sm max-w-none text-foreground">
             {aboutText.map((paragraph, index) => (
               <p key={index} className="text-base leading-relaxed text-justify mb-4">
