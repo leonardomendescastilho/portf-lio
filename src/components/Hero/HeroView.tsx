@@ -30,7 +30,7 @@ const HeroView = () => {
     <TooltipProvider>
       <section className="flex flex-col flex-1 items-center justify-center py-8 w-full max-w-xl mx-auto min-h-0">
       <div className="flex flex-col items-center gap-4">
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center isolate">
           <motion.div
             aria-hidden
             className="photo-glow pointer-events-none absolute -inset-[20%] rounded-full blur-2xl"
@@ -38,14 +38,18 @@ const HeroView = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
-          <motion.img
-            src={hero.photoUrl}
-            alt={hero.name}
-            className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 rounded-full object-cover border-2 border-primary shadow-lg"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-          />
+          {/* Wrapper estático recorta a foto. O border-radius NÃO pode ficar no <img> que
+              tem transform+object-cover — no iOS quebra o recorte e a foto vira quadrada. */}
+          <div className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-primary shadow-lg">
+            <motion.img
+              src={hero.photoUrl}
+              alt={hero.name}
+              className="h-full w-full object-cover"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+            />
+          </div>
         </div>
         <div className="flex flex-col items-center gap-1.5">
           <motion.h1
