@@ -30,7 +30,7 @@ const HeroView = () => {
     <TooltipProvider>
       <section className="flex flex-col flex-1 items-center justify-center py-8 w-full max-w-xl mx-auto min-h-0">
       <div className="flex flex-col items-center gap-4">
-        <div className="relative flex items-center justify-center isolate">
+        <div className="relative flex items-center justify-center">
           <motion.div
             aria-hidden
             className="photo-glow pointer-events-none absolute -inset-[20%] rounded-full blur-2xl"
@@ -38,11 +38,10 @@ const HeroView = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           />
-          {/* iOS Safari não recorta filho com transform dentro de overflow:hidden+rounded.
-              Por isso a foto NÃO tem transform: o fade fica no wrapper (opacity), o <img>
-              é estático, e translateZ(0) força uma camada estável que recorta certo. */}
+          {/* Bug WebKit iOS (#98538/#254151): overflow:hidden + border-radius não recorta.
+              Fix comprovado: isolation:isolate NO elemento que recorta (não no pai). */}
           <motion.div
-            className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-primary shadow-lg [transform:translateZ(0)]"
+            className="relative isolate h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 overflow-hidden rounded-full border-2 border-primary shadow-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7 }}
