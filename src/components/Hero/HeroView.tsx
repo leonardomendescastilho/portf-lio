@@ -64,7 +64,7 @@ const HeroView = () => {
       >
         {hero.techBadges.map((tech, idx) => (
           <motion.div
-            key={tech}
+            key={idx}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 + idx * 0.12, duration: 0.4 }}
