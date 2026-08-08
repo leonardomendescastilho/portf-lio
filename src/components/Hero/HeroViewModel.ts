@@ -17,6 +17,8 @@ export const useHeroViewModel = (): HeroModel => {
   
   return useMemo(() => ({
     name: t.hero.name,
+    role: t.hero.role,
+    location: t.hero.location,
     description: t.hero.description,
     techBadges: t.hero.techBadges,
     photoUrl: ProfileImage, 
@@ -26,7 +28,7 @@ export const useHeroViewModel = (): HeroModel => {
       { label: t.hero.socialLinks.linkedin, url: "https://www.linkedin.com/in/leonardodevcastilho/", icon: "linkedin" },
       { label: t.hero.socialLinks.instagram, url: "https://www.instagram.com/castilho.io/", icon: "instagram" },
       { label: t.hero.socialLinks.email, url: "mailto:leonardo.mendescastilho@gmail.com", icon: "mail" },
-      { label: t.hero.socialLinks.whatsapp, url: "https://wa.me/5512982242771", icon: "smartphone" },
+      { label: t.hero.socialLinks.whatsapp, url: "", icon: "smartphone" },
     ],
   }), [t, language]);
 };

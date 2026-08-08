@@ -23,27 +23,65 @@ import { useLanguage } from "@/components/Language/language-provider";
 const HeroView = () => {
   const hero = useHeroViewModel();
   const { t } = useLanguage();
+  // Isola "RapidCanvas" no cargo para virar link (cor da marca, sem sublinhado).
+  const [rolePre, rolePost = ""] = hero.role.split("RapidCanvas");
 
   return (
     <TooltipProvider>
       <section className="flex flex-col flex-1 items-center justify-center py-8 w-full max-w-xl mx-auto min-h-0">
       <div className="flex flex-col items-center gap-4">
-        <motion.img
-          src={hero.photoUrl}
-          alt={hero.name}
-          className="h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 rounded-full object-cover border-2 border-primary shadow-lg"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
-        />
-        <motion.h1
-        className="text-2xl sm:text-3xl md:text-4xl font-bold text-center tracking-tight font-serif-display"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-      >
-        {hero.name}
-        </motion.h1>
+        <div className="relative flex items-center justify-center">
+          <motion.div
+            aria-hidden
+            className="photo-glow pointer-events-none absolute -inset-[20%] rounded-full blur-2xl"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          />
+          <motion.img
+            src={hero.photoUrl}
+            alt={hero.name}
+            className="relative h-28 w-28 sm:h-36 sm:w-36 md:h-44 md:w-44 rounded-full object-cover border-2 border-primary shadow-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          />
+        </div>
+        <div className="flex flex-col items-center gap-1.5">
+          <motion.h1
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center tracking-tight font-serif-display"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            {hero.name}
+          </motion.h1>
+          <motion.p
+            className="text-sm sm:text-base font-medium tracking-wide text-foreground/70 text-center"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            {rolePre}
+            <a
+              href="https://www.rapidcanvas.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[#FF492C] no-underline transition-opacity hover:opacity-80"
+            >
+              RapidCanvas
+            </a>
+            {rolePost}
+          </motion.p>
+          <motion.p
+            className="text-xs sm:text-sm text-muted-foreground text-center"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.38, duration: 0.5 }}
+          >
+            {hero.location}
+          </motion.p>
+        </div>
         <motion.p
           className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground text-center leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
@@ -112,6 +150,14 @@ const HeroView = () => {
               phone: <Phone className="w-5 h-5 hover:text-primary transition-colors" strokeWidth={1.3} />,
               smartphone: <Phone className="w-5 h-5 hover:text-primary transition-colors" strokeWidth={1.3} />,
             };
+            // Sem URL (ex.: telefone): ícone decorativo, sem link/hover clicável.
+            if (!link.url) {
+              return (
+                <span key={link.label} aria-label={link.label} className="text-muted-foreground">
+                  {icons[link.icon]}
+                </span>
+              );
+            }
             return (
               <a
                 key={link.label}

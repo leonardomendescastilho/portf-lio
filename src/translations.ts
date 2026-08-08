@@ -15,6 +15,8 @@ export interface Translations {
   // Hero Section
   hero: {
     name: string;
+    role: string;
+    location: string;
     description: string;
     techBadges: string[];
     techBadgeDescriptions: Record<string, string>;
@@ -60,6 +62,8 @@ export const translations: Record<Language, Translations> = {
         },
         hero: {
             name: "Leonardo Mendes",
+            role: "AI Engineer @ RapidCanvas",
+            location: "Brasil · Remoto",
             description: "AI Engineer entregando software que resolve problemas reais. Atuo end-to-end — do entendimento do problema à entrega — construindo soluções de IA generativa e sistemas agênticos para clientes nacionais e internacionais.",
             techBadges: ["React", "FastAPI", "Node.js", "PostgreSQL", "RAG", "Sistemas Agênticos", "Claude", "LangChain", "Streamlit", "Docker", "CI/CD", "Testes"],
             techBadgeDescriptions: {
@@ -152,6 +156,8 @@ export const translations: Record<Language, Translations> = {
         },
         hero: {
             name: "Leonardo Mendes",
+            role: "AI Engineer @ RapidCanvas",
+            location: "Brazil · Remote",
             description: "AI Engineer building software that solves real problems. I work end-to-end — from understanding the problem to delivery — creating generative AI solutions and agentic systems for national and international clients.",
             techBadges: ["React", "FastAPI", "Node.js", "PostgreSQL", "RAG", "Agentic Systems", "Claude", "LangChain", "Streamlit", "Docker", "CI/CD", "Testing"],
             techBadgeDescriptions: {

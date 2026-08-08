@@ -17,6 +17,8 @@ export interface SocialLink {
  */
 export interface HeroModel {
   name: string;
+  role: string;
+  location: string;
   description: string;
   techBadges: string[];
   photoUrl: string;

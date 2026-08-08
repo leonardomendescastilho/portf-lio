@@ -12,6 +12,11 @@
   display: none; /* Chrome/Safari/Webkit */
 }
 
+/* Halo/brilho radial atrás da foto — cor via --glow (troca por tema). */
+.photo-glow {
+  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -85,6 +90,7 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --glow: oklch(0.4 0 0 / 0.5);
 }
 
 .dark {
@@ -119,6 +125,7 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --glow: oklch(1 0 0 / 0.3);
 }
 
 @layer base {
