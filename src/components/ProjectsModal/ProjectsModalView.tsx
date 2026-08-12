@@ -59,11 +59,29 @@ const ProjectsModalView: FC<ProjectsModalViewProps> = ({ isOpen, onClose }) => {
               key={project.id}
               className="group flex min-w-0 flex-col gap-3 rounded-lg border p-4 sm:p-5 transition-shadow hover:shadow-md"
             >
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="aspect-video w-full rounded-md border-2 border-transparent object-cover transition-colors group-hover:border-primary"
-              />
+              {(() => {
+                const previewUrl = project.liveUrl ?? project.githubUrl;
+                const img = (
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="aspect-video w-full rounded-md border-2 border-transparent object-cover transition-colors group-hover:border-primary"
+                  />
+                );
+                return previewUrl ? (
+                  <a
+                    href={previewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Abrir ${project.title}`}
+                    className="block cursor-pointer rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {img}
+                  </a>
+                ) : (
+                  img
+                );
+              })()}
               <h3 className="text-lg font-semibold break-words">{project.title}</h3>
               {/* Altura fixa ~5 linhas: descrição maior ganha scroll interno, mantendo cards uniformes. */}
               <p className="h-[8.2em] overflow-y-auto pr-1 text-sm sm:text-base leading-relaxed text-muted-foreground break-words">
