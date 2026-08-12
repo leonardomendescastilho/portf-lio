@@ -33,7 +33,7 @@ const HeroView = () => {
         <div className="relative flex items-center justify-center">
           <motion.div
             aria-hidden
-            className="photo-glow pointer-events-none absolute -inset-[20%] rounded-full blur-2xl"
+            className="photo-glow pointer-events-none absolute -inset-[20%] rounded-full blur-2xl hidden md:block"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
