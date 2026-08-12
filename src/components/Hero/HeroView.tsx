@@ -2,7 +2,6 @@
  * @file HeroView.tsx
  * @description Componente Hero centralizado, com animação, badges, foto, CV e redes sociais.
  */
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
@@ -129,18 +128,7 @@ const HeroView = () => {
 
       </div>
 
-      <motion.div
-          className="mt-10 sm:mt-16 w-full sm:w-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <Button asChild size="lg" className="w-full sm:w-auto">
-            <a href={hero.cvUrl} download rel="noopener noreferrer">
-              {t.hero.downloadCV}
-            </a>
-          </Button>
-        </motion.div>
+      {/* Download CV desabilitado: PDF desatualizado. Reativar quando novo currículo estiver pronto. */}
         <motion.div
           className="flex gap-4 mt-10 sm:mt-24"
           initial={{ opacity: 0 }}
